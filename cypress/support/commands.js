@@ -114,17 +114,26 @@ Cypress.Commands.add('Add_To_Bag_Msite',()=>
 Cypress.Commands.add('Empty_Cart_Msite', () =>
 {
 	cy.get('.mkr-New-Shopping-Bag').click()
-	cy.wait(1000)
-	if(cy.contains('Your Shopping Bag is Empty'))
-	{
-		cy.get('.back-btn > svg').click()
-	}
-	else
-	{
-		cy.get('.remove-product > svg').click()
-		cy.contains('REMOVE').click()
-	}
+	cy.wait(5000)
+	cy.get('body').then(($body) => {
+		// synchronously query from body
+		// to find which element was created
+		if ($body.text().includes('Your Shopping Bag is Empty')) 
+		{
+		  // input was found, do something else here
+		  cy.get('.back-btn > svg').click()
+		
+		}
+		else
+		{
+			cy.get('.remove-product > svg').click()
+			cy.wait(2000)
+			cy.get('.user-logged-in > :nth-child(2)').click()
+			cy.wait(2000)
+		}
+	})
 
+	
 }
 )
 
@@ -132,6 +141,6 @@ Cypress.Commands.add('COD_Msite', ()=>
 {
 	cy.contains('OTHER PAYMENT').click()
 	cy.contains('CASH ON DELIVERY').click()
-	cy.contains('PAY').click()
+	cy.contains('PAY ₹').click()
 }
 )
