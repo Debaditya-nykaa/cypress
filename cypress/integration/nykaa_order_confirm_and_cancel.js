@@ -4,9 +4,9 @@
 Cypress.config(
     {
 		
-		"userAgent":"Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36",
-    	"viewportWidth": 375,
-		"viewportHeight": 667,
+		//"userAgent":"Mozilla/5.0 (Linux; Android 7.0; SM-G930V Build/NRD90M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/59.0.3071.125 Mobile Safari/537.36",
+    	//"viewportWidth": 375,
+		//"viewportHeight": 667,
 		"baseUrl": "https://preprod.nykaa.com/"
     }
 );
@@ -21,7 +21,7 @@ describe('Test Case 1', ()=>
 	before(() => 
 	{
 		cy.wait(2000)
-		cy.viewport('iphone-6')
+		//cy.viewport('iphone-6')
 		//Cypress.config('userAgent','Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36')
 		cy.visit('/neutrogena-oil-free-acne-wash/p/2559?ptype=product&productId=2559&skuId=2559&categoryId=649');
 		cy.wait(200)
