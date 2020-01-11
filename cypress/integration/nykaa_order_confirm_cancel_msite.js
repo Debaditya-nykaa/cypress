@@ -32,7 +32,10 @@ describe('Mobile Test Case', ()=>
 	     cy.wait(200)
        cy.Add_To_Bag_Msite()
        cy.COD_Msite()
-      
+       cy.wait(3000)
+	     cy.get('.btn').scrollIntoView().click()
+       cy.VisitMyOrders_Msite()
+       cy.CancelOrder_Msite()
     }
     )
 

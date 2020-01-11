@@ -144,3 +144,28 @@ Cypress.Commands.add('COD_Msite', ()=>
 	cy.contains('PAY ₹').click()
 }
 )
+
+Cypress.Commands.add('VisitMyOrders_Msite', ()=>
+{
+
+	cy.get('a>.mkr').click()
+	cy.wait(1000)
+	cy.contains('My Orders').click()
+	
+
+}
+)
+
+Cypress.Commands.add('CancelOrder_Msite', ()=>
+{
+
+	cy.get(':nth-child(1) > .my-order-m-order-details-section-first').first().as('firstTodo')
+	cy.get('@firstTodo').find('.slick-slide slick-active pos-relative').click()
+	cy.wait(1000)
+	cy.contains('CANCEL ORDER').scrollIntoView().click()
+	cy.get('.reason-select-box').select('Other')
+	cy.get('.yes').click()
+	cy.get('@firstTodo').find('.col-md-5 > .my-order-font-bold').should('have.text', 'cancelled')
+
+}
+)
