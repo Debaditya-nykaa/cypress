@@ -1,4 +1,8 @@
 {
-    "baseUrl": "https://preprod.nykaa.com"
+    "baseUrl": "https://preprod.nykaa.com",
+    "reporter": "junit",
+    "reporterOptions": {
+    "mochaFile": "cypress/results/output.xml"
+    }
      
 }
