@@ -10,7 +10,7 @@ Cypress.config(
 		"baseUrl": "https://preprod.nykaa.com/"
     }
 );
-describe('Test Case 1', ()=>
+describe('Test Suite - Desktop', ()=>
 {
 	Cypress.on('uncaught:exception', (err, runnable) => {
 		// returning false here prevents Cypress from
@@ -30,7 +30,7 @@ describe('Test Case 1', ()=>
 	)
 
 
-	it('Nykaa Login Order Create and Cancel', () =>
+	it('Nykaa Order Confirmation and Cancellation - Desktop', () =>
 	{
 		
 		cy.login('nykaatesting@gmail.com','nykaa@123')

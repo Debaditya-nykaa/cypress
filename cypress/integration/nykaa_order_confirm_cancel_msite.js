@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('Mobile Test Case', ()=>
+describe('Test Suite- Mobile', ()=>
 {
 
     Cypress.on('uncaught:exception', (err, runnable) => {
@@ -19,7 +19,7 @@ describe('Mobile Test Case', ()=>
 	}
 	)
 
-    it('Login', () =>
+    it('Nykaa Order Confirmation and Cancellation - Msite', () =>
     {
 
        cy.login_msite('nykaatesting@gmail.com','nykaa@123')
