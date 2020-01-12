@@ -9,6 +9,8 @@
   "author": "Anurag",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^3.8.1"
+    "cypress": "^3.8.1",
+    "mocha": "^5.2.0",
+    "mochawesome": "^4.0.1"
   }
 }
