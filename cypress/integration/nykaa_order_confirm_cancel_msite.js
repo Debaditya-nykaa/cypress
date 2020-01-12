@@ -11,9 +11,8 @@ describe('Mobile Test Case', ()=>
       
     before(() => 
 	{
-		//cy.wait(8000)
 		cy.viewport('iphone-6')
-		cy.visit('https://preprod.nykaa.com/neutrogena-oil-free-acne-wash/p/2559?ptype=product&productId=2559&skuId=2559&categoryId=649');
+		cy.visit('https://preprod.nykaa.com');
 		cy.wait(200)
 		cy.reload(true)
 		cy.wait(200)
@@ -26,7 +25,8 @@ describe('Mobile Test Case', ()=>
        cy.login_msite('nykaatesting@gmail.com','nykaa@123')
        cy.wait(2000)
        cy.Empty_Cart_Msite()
-       cy.visit('https://preprod.nykaa.com/neutrogena-oil-free-acne-wash/p/2559?ptype=product&productId=2559&skuId=2559&categoryId=649')
+       cy.Navigate_PDP_Msite()
+       //cy.visit('https://preprod.nykaa.com/neutrogena-oil-free-acne-wash/p/2559?ptype=product&productId=2559&skuId=2559&categoryId=649')
        cy.wait(200)
        cy.reload(true)
 	     cy.wait(200)
