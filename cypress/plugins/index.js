@@ -16,6 +16,7 @@
   // `config` is the resolved Cypress config
 //}
 
+
 const fs = require('fs-extra')
 const path = require('path')
 
